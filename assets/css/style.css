@@ -70,6 +70,15 @@ h2{
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
+  margin: 0;
+}
+
+div:first-of-type, p:first-of-type {
+  height: 240px;
+}
+
+div:not(:first-of-type), p:not(:first-of-type) {
+  border-top: 1px solid var(--color-text);
 }
 
 h3{
@@ -84,7 +93,7 @@ p {
   font-family: 'PicNic-Regular';
   margin: 0;
   padding-bottom: 80px;
-  border-left: 1px solid  var(--color-text);
+  border-left: 1px solid var(--color-text);
 }
 
 ol, ul{
@@ -116,19 +125,34 @@ div.page-wrapper {
   padding-left: var(--margin);
 }
 
-div.section-wrapper {
+/* navigation */
+ 
+header{
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  width: calc(100vw - 100px);
+}
+
+
+/* content */
+
+main{
   display: grid;
   grid-template-rows: repeat(auto-fit, 1fr);
-  grid-template-columns: 1fr 3fr;
-
-  justify-content: start;
-  align-content: start;
-  border-top: 1px solid  var(--color-text);
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid var(--color-text);
 }
 
-div.section-wrapper:last-of-type {
-  border-bottom: 1px solid  var(--color-text);
+.source{
+  font-size: 10px;
+  line-height: 11px;
+  width: 150px;
+  display: block;
+  padding-top: 16rem;
+  padding-left: 5rem;
 }
+
 
 
 
@@ -214,9 +238,11 @@ div.section-wrapper:last-of-type {
   /* styles for screen sizes 779px, should covers 'mobile' and 'tablet' */
   /* style this one first and then use the two others to 'override' some styles (exceptions/details) */
 
-
-
-
+  .source{
+    width: 100px;
+    padding-left: 0.5rem;
+    overflow: auto;
+  }
 
 
   /* utilities */
@@ -229,9 +255,6 @@ div.section-wrapper:last-of-type {
 
 
 @media (max-width: 339px) {
-
-  /* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
-
 }
 
 
